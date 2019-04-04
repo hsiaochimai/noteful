@@ -27,6 +27,10 @@ class App extends Component {
         break;
       case '/folder/:folderID':
       case '/':
+
+        // create a shallow copy of the store, 
+        // otherwise we'll be filtering in place 
+        // (changing the original store)
         const storeCopy = { ...this.props.STORE }
 
         const folderID = this.props.match.params.folderID
