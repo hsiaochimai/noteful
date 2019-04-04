@@ -1,12 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import MainPage from "./MainPage";
+import Header from "./Header";
+import { BrowserRouter, Route, Link } from "react-router-dom"
+import "./App.css";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      folders: [],
+      notes: []
+    };
+  }
+
   render() {
     return (
       <div className="App">
-        HI!
+          <Header />
+          <MainPage data={this.props.STORE} />
+        
       </div>
     );
   }
