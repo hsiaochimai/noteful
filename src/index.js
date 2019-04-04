@@ -5,10 +5,11 @@ import { createBrowserHistory } from 'history';
 
 import './index.css';
 import App from './App';
+import FolderEdit from './FolderEdit';
 import store from './dummy-store'
 import * as serviceWorker from './serviceWorker';
 
-const history =  createBrowserHistory();
+const history = createBrowserHistory();
 
 ReactDOM.render(
     <BrowserRouter history={history}>
@@ -19,10 +20,14 @@ ReactDOM.render(
             render={(props) => <App {...props} STORE={store} />}
         />
         <Route
-            path="/folder:folderID"
+            path="/folder/:folderID"
             render={(props) => <App {...props} STORE={store} />}
         />
-        
+        <Route
+            path="/addFolder"
+            render={(props) => <App {...props} STORE={store} />}
+        />
+
     </BrowserRouter>,
 
     document.getElementById('root'));

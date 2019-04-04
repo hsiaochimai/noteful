@@ -8,7 +8,7 @@ class Folder extends Component {
         let folders = this.props.folders.map((folder, i) => {
             console.log(`this is the folders name`, folder.name, `index is`, folder.id)
             return (
-                <Link to={`/folder:${folder.id}`}>
+                <Link to={`/folder/${folder.id}`}>
                     <li key={i} >{folder.name}</li>
                 </Link>
             )
@@ -20,7 +20,9 @@ class Folder extends Component {
                 <ul>
                     {folders}
                 </ul>
-                <button>Add Folder</button>
+                <Link to="/addFolder">
+                    <button>Add Folder</button>
+                </Link>
             </div>
         )
     }
