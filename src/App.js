@@ -14,11 +14,12 @@ class App extends Component {
   }
 
   render() {
+    console.log('App props:', this.props)
     return (
       <div className="App">
-          <Header />
-          <MainPage data={this.props.STORE} />
-        
+        <Header />
+        <MainPage data={this.props.STORE} />
+
       </div>
     );
   }
