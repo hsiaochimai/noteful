@@ -26,7 +26,9 @@ class App extends Component {
     let { folders, notes } = this.state
     const folderID = this.getFolderID(routerProps)
     if (folderID) {
-      notes = notes.filter(note => note.folderId === folderID)
+      
+      //copy and filter notes from this.state
+      notes = [...notes].filter(note => note.folderId === folderID)
     }
 
     return (
