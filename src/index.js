@@ -14,19 +14,8 @@ const history = createBrowserHistory();
 ReactDOM.render(
     <BrowserRouter history={history}>
 
-        {/* <App STORE={store}/> */}
-        <Route
-            exact path="/"
-            render={(props) => <App {...props} STORE={store} />}
-        />
-        <Route
-            path="/folder/:folderID"
-            render={(props) => <App {...props} STORE={store} />}
-        />
-        <Route
-            path="/addFolder"
-            render={(props) => <App {...props} STORE={store} />}
-        />
+        <App key='App' STORE={store}/>
+        
 
     </BrowserRouter>,
 
