@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 
 class Note extends Component{
 render(){
-    console.log(`this is note props`,this.props.notes)
     let notes=this.props.notes.map((note,i) =>{
-        console.log(note.name)
         return(
-        <div className='noteDetails'key={i}>
+        <Link to={`/note/${note.id}`}>
+        <div className='noteDetails'key={i} onClick={(e=>{
+            console.log(`this clicked!`)
+        })}>
         <h3>
         {note.name}
         </h3>
         <p>Modified on:{note.modified}</p>
         <button>Delete</button>
         </div>
+        </Link>
         )
         
     })
