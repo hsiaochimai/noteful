@@ -4,21 +4,34 @@ import NoteList from './NoteList'
 import AddNote from './AddNote'
 import AddFolder from './AddFolder'
 import "./App.css"
-class MainPage extends Component{
-render(){
-    console.log(`this is the props that was passed to the mainpage`, this.props.data.notes)
-    return(
-        <div className='mainpage'>
-            <div className='sidebar'>
-            <FolderList folders={this.props.data.folders}/>
-            <AddFolder/>
+import NotefulContext from './NotefulContext'
+
+class MainPage extends Component {
+
+    render() {
+        const { notes, folders } = this.props.data
+        console.log(`this is the props that was passed to the mainpage`, notes)
+        return (
+            <div className='mainpage'>
+                <div className='sidebar'>
+                    <FolderList folders={folders} />
+                    <AddFolder />
+                </div>
+                <div className='main'>
+                    <NoteList notes={notes} />
+                    <AddNote />
+                </div>
             </div>
-            <div className='main'>
-            <NoteList notes={this.props.data.notes}/>
-            <AddNote />
-            </div>
-        </div>
-    )
+        )
+    }
 }
-}
-export default MainPage
+
+export default (props) =>
+    (<NotefulContext.Consumer>
+        {(STORE) => {
+            // debugger
+            return (
+                <MainPage {...props} data={STORE} />
+            )
+        }}
+    </NotefulContext.Consumer>)
