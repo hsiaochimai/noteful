@@ -6,16 +6,26 @@ import "./App.css";
 import FolderEdit from "./FolderEdit";
 import NotePage from './NotePage'
 import NotefulContext from './NotefulContext'
+import { withRouter } from "react-router-dom"
 
 class App extends Component {
   constructor(props) {
     super(props);
     //shallow copy the initial state from the STORE prop
-    this.state = { ...this.props.STORE };
+    this.state = {
+      currentFolderID: null,
+      ...this.props.STORE
+    };
+  }
+ 
+  componentDidUpdate(){
+    const {match:params} = this.props
+    console.log('SMTHNG CHANGED', this.props)
   }
 
   componentDidMount() {
     console.log("App mounted");
+    
   }
 
   getFolderID(routerProps) {
@@ -55,6 +65,7 @@ class App extends Component {
   };
 
   render() {
+    console.log('App re-render', this.props)
     const contextValue = {
       notes: this.state.notes,
       folders: this.state.folders,
@@ -70,18 +81,20 @@ class App extends Component {
             exact
             path="/"
             render={routerProps =>
-              <MainPage key="FolderList" {...routerProps} data={{ folders, notes }} />
+              <MainPage key="FolderList" {...routerProps} />
             }
           />
           <Route
             path="/folder/:folderID"
             render={routerProps => {
+              // debugger
+              
               const folderID = routerProps.match.params.folderID
               notes = notes.filter(note => note.folderId === folderID);
-              return <MainPage key="FolderList" {...routerProps} data={{ folders, notes }} />
+              return <MainPage key="FolderList" {...routerProps} />
 
             }}
-          />
+        />
 
           <Route
             path="/addFolder"
@@ -107,4 +120,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

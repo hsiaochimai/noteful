@@ -10,6 +10,7 @@ class MainPage extends Component {
 
     render() {
         const { notes, folders } = this.props.data
+        console.log(`MainPage props`, this.props)
         console.log(`this is the props that was passed to the mainpage`, notes)
         return (
             <div className='mainpage'>
