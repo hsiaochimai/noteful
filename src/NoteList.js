@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Link} from 'react-router-dom';
-import Note from "./Note";
+import "./App.css"
 class NoteList extends Component {
   render() {
     console.log(`these were the props sent to notelist`, this.props.notes)
@@ -23,7 +23,6 @@ class NoteList extends Component {
     return (
       <div className="NoteList">
         {notes}
-        <button>Add Note</button>
       </div>
     );
   }

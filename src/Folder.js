@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom"
+import "./App.css"
 
 class Folder extends Component {
     render() {
@@ -20,9 +21,6 @@ class Folder extends Component {
                 <ul>
                     {folders}
                 </ul>
-                <Link to="/addFolder">
-                    <button>Add Folder</button>
-                </Link>
             </div>
         )
     }

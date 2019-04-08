@@ -4,7 +4,7 @@ class FolderList extends Component{
     render(){
         console.log(`these were the props passed to Folderlist`, this.props.folders)
         return(
-            <div className='FolderList'>
+            <div className='Folderlist'>
             <Folder folders={this.props.folders}/>
             </div>
         )

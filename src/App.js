@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import MainPage from "./MainPage";
-import FolderList from "./FolderList";
-import NoteList from "./NoteList";
 import Header from "./Header";
-import NoteContent from "./NotePage";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import "./App.css";
 import FolderEdit from "./FolderEdit";
@@ -95,11 +92,11 @@ class App extends Component {
       
             console.log(`folder id is`,folders)
             return <NotePage {...routerProps} data={{ folders, notes }}/>
-            
-          }}
-        
-            // this.selectedNote(routerProps)}
-        />
+          }}/>
+
+          <Route
+    
+          />
       </div>
     );
   }

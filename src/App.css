@@ -4,10 +4,10 @@ header{
 
 .mainpage{
   display:flex;
-  flex-direction: row;
+  
 }
 
-.FolderList{
-  margin-right: 40%;
-  border:2px black;
+.main{
+  margin-left: 30%;
 }
+
