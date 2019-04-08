@@ -59,8 +59,8 @@ class App extends Component {
       notes: this.state.notes,
       folders: this.state.folders,
     }
-    const {notes}= this.state
-    const {folders} =this.state
+    const {notes, folders}= contextValue
+    
     return (
       <div className="App">
         <Header />
@@ -76,7 +76,7 @@ class App extends Component {
           path="/folder/:folderID"
           render={routerProps => {
             const folderID= routerProps.match.params.folderID 
-            const notes = this.state.notes.filter(note => note.folderId === folderID);
+            const notes = notes.filter(note => note.folderId === folderID);
             return <MainPage key="FolderList" {...routerProps} data={{ folders, notes }} />
 
           }}
@@ -94,7 +94,7 @@ class App extends Component {
           path="/note/:noteID"
           render={routerProps => {
             const noteID=routerProps.match.params.noteID
-            const notes= this.state.notes.filter(note=>note.id===noteID)
+            const notes= notes.filter(note=>note.id===noteID)
       
             console.log(`folder id is`,folders)
             return <NotePage {...routerProps} data={{ folders, notes }}/>
