@@ -37,7 +37,7 @@ class App extends Component {
 
     return (
       <>
-        <MainPage key="FolderList" {...routerProps} data={{ folders, notes }} />
+        <MainPage key="FolderList" {...routerProps}  />
       </>
     );
   };
