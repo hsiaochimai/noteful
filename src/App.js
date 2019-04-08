@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import "./App.css";
 import FolderEdit from "./FolderEdit";
 import NotePage from './NotePage'
+import NotefulContext from './NotefulContext'
 
 class App extends Component {
   constructor(props) {
@@ -54,11 +55,16 @@ class App extends Component {
   };
 
   render() {
-    const notes= this.state.notes
-    const folders =this.state.folders
+    const contextValue={
+      notes: this.state.notes,
+      folders: this.state.folders,
+    }
+    // const {notes}= this.state
+    // const {folders} =this.state
     return (
       <div className="App">
         <Header />
+        <NotefulContext.Provider value= {contextValue}>
         <Route
           exact
           path="/"
@@ -94,9 +100,7 @@ class App extends Component {
             return <NotePage {...routerProps} data={{ folders, notes }}/>
           }}/>
 
-          <Route
-    
-          />
+        </NotefulContext.Provider>
       </div>
     );
   }
