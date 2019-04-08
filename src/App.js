@@ -59,8 +59,8 @@ class App extends Component {
       notes: this.state.notes,
       folders: this.state.folders,
     }
-    // const {notes}= this.state
-    // const {folders} =this.state
+    const {notes}= this.state
+    const {folders} =this.state
     return (
       <div className="App">
         <Header />
