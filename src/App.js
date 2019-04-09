@@ -12,12 +12,65 @@ class App extends Component {
   constructor(props) {
     super(props);
     //shallow copy the initial state from the STORE prop
-    this.state = { ...this.props.STORE };
+    this.state = { 
+      folders :[],
+      notes: [],
+      currentFolder: null,
+      error: null, 
+    };
   }
-
+getFolders= folders=>{
+  this.setState({
+    folders,
+    error:null,
+  })
+}
+getNotes= notes=>{
+  this.setState({
+    notes, 
+    error:null
+  })
+}
   componentDidMount() {
     console.log("App mounted");
+    fetch('http://localhost:9090/folders',{
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        }
+      })
+        .then(res=>{
+          if (!res.ok){
+            throw new Error(res.status)
+          }
+          return res.json()
+        })
+        .then(resJson=>{
+          console.log(`hello resJson`, resJson)
+          return this.getFolders(resJson)
+          })
+        .catch(error=>this.setState({error})) 
+
+    fetch('http://localhost:9090/notes',{
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+      }
+    })
+      .then(res=>{
+        if (!res.ok){
+          throw new Error (res.status)
+        }
+        return res.json()
+      })
+      .then(resJson=>{
+        console.log(`hello Notes resJson`,resJson)
+        return this.getNotes(resJson)
+      })
+      .catch(error=> this.setState({error}))
   }
+
+  
 
   // getFolderID(routerProps) {
   //   console.log(`this is routerProps`, routerProps);
