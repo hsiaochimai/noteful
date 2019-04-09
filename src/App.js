@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import Header from "./Header";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import "./App.css";
-import FolderEdit from '../src/Components/Folder/FolderEdit';
+import AddFolderPage from './Components/Folder/AddFolderPage';
 import NotePage from './Components/Notes/NotePage'
 import FolderPage from './Components/Folder/FolderPage'
 import NotefulContext from './NotefulContext'
 import MainPage from './MainPage'
+import AddNotePage from './Components/Notes/AddNotePage'
 
 class App extends Component {
   constructor(props) {
@@ -125,16 +126,20 @@ getNotes= notes=>{
 
           <Route
             path="/addFolder"
-            render={routerProps => (
-              <FolderEdit
-                {...{ ...routerProps, onFolderAdd: this.onFolderAdd }}
+            component={AddFolderPage}
               />
-            )}
-          />
+           
           <Route
             path="/note/:noteID"
             component={NotePage}
             />
+            
+          <Route
+            path='/addNote'
+            component={AddNotePage}
+            />
+            
+         
 
         </NotefulContext.Provider>
       </div>

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import NoteList from '../Notes/NoteList'
-import AddNote from '../Notes/AddNote'
+import AddNote from '../Notes/AddNotePage'
 import AddFolder from './AddFolder'
 import '../../App.css'
 import NotefulContext from '../../NotefulContext'
 import Folder from '../../Folder';
+import {Link} from 'react-router-dom'
 
 class FolderPage extends Component {
 static contextType= NotefulContext
@@ -17,11 +18,15 @@ static contextType= NotefulContext
             <div className='mainpage'>
                 <div className='sidebar'>
                     <Folder folders={folders} />
-                    <AddFolder />
+                    <Link to="/addFolder">
+                        <button>Add Folder</button>
+                    </Link>
                 </div>
                 <div className='main'>
                     <NoteList notes={getNotes} />
-                    <AddNote />
+                    <Link to='/addNote'>
+                        <button>Add Note</button>
+                    </Link>
                 </div>
             </div>
             
