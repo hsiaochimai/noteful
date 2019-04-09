@@ -5,7 +5,6 @@ import { createBrowserHistory } from 'history';
 
 import './index.css';
 import App from './App';
-import FolderEdit from './FolderEdit';
 import store from './dummy-store'
 import * as serviceWorker from './serviceWorker';
 

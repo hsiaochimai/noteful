@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import MainPage from "./MainPage";
 import Header from "./Header";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import "./App.css";
-import FolderEdit from "./FolderEdit";
-import NotePage from './NotePage'
+import FolderEdit from '../src/Components/Folder/FolderEdit';
+import NotePage from './Components/Notes/NotePage'
+import FolderPage from './Components/Folder/FolderPage'
 import NotefulContext from './NotefulContext'
+import MainPage from './MainPage'
 
 class App extends Component {
   constructor(props) {
@@ -18,36 +19,27 @@ class App extends Component {
     console.log("App mounted");
   }
 
-  getFolderID(routerProps) {
-    console.log(`this is routerProps`, routerProps);
-    return routerProps.match.params.folderID || null;
-  }
-  getNoteID(routerProps) {
-    console.log(`this is the params`, routerProps.match.params.noteID);
-    return routerProps.match.params.noteID || null;
-  }
-  renderMainPage = routerProps => {
-    let { folders, notes } = this.state;
-    const folderID = this.getFolderID(routerProps);
-    if (folderID) {
-      //copy and filter notes from this.state
-      notes = [...notes].filter(note => note.folderId === folderID);
-      console.log(`this is what notes is doing`, notes);
-    }
+  // getFolderID(routerProps) {
+  //   console.log(`this is routerProps`, routerProps);
+  //   return routerProps.match.params.folderID || null;
+  // }
+ 
+  // renderMainPage = routerProps => {
+  //   let { folders, notes } = this.state;
+  //   const folderID = this.getFolderID(routerProps);
+  //   if (folderID) {
+  //     //copy and filter notes from this.state
+  //     notes = [...notes].filter(note => note.folderId === folderID);
+  //     console.log(`this is what notes is doing`, notes);
+  //   }
 
-    return (
-      <>
-        <MainPage key="FolderList" {...routerProps} />
-      </>
-    );
-  };
-  selectedNote = routerProps => {
-    const noteID = this.getNoteID(routerProps);
-
-    if (noteID) {
-      return <NotePage notes={this.state.notes} />;
-    }
-  };
+  //   return (
+  //     <>
+  //       <MainPage key="FolderList" {...routerProps} />
+  //     </>
+  //   );
+  // };
+ 
 
   onFolderAdd = folder => {
     //TODO implement this
@@ -59,8 +51,7 @@ class App extends Component {
       notes: this.state.notes,
       folders: this.state.folders,
     }
-    let { notes, folders } = contextValue
-    // debugger
+    
 
     return (
       <div className="App">
@@ -69,18 +60,14 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={routerProps =>
-              <MainPage key="FolderList" {...routerProps} data={{ folders, notes }} />
-            }
-          />
+            component={MainPage}
+            />
+            
+          
           <Route
             path="/folder/:folderID"
-            render={routerProps => {
-              const folderID = routerProps.match.params.folderID
-              notes = notes.filter(note => note.folderId === folderID);
-              return <MainPage key="FolderList" {...routerProps} data={{ folders, notes }} />
-
-            }}
+            component = {FolderPage}
+         
           />
 
           <Route
@@ -93,13 +80,8 @@ class App extends Component {
           />
           <Route
             path="/note/:noteID"
-            render={routerProps => {
-              const noteID = routerProps.match.params.noteID
-              const notes = notes.filter(note => note.id === noteID)
-
-              console.log(`folder id is`, folders)
-              return <NotePage {...routerProps} data={{ folders, notes }} />
-            }} />
+            component={NotePage}
+            />
 
         </NotefulContext.Provider>
       </div>

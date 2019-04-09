@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import {Link} from 'react-router-dom';
-import "./App.css"
+import NotefulContext from '../../NotefulContext'
+import '../../App.css'
 class NoteList extends Component {
+  static contextType=NotefulContext
   render() {
     console.log(`these were the props sent to notelist`, this.props.notes)
     let notes=this.props.notes.map((note,i) =>{

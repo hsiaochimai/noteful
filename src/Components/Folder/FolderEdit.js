@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import MainPage from "./MainPage";
-import Header from "./Header";
+import FolderPage from "../Folder/FolderPage";
+import Header from "../../Header";
 import { BrowserRouter, Route, Link } from "react-router-dom"
-import "./App.css";
+import '../../App.css';
 
 export default class FolderEdit extends Component {
     render() {
