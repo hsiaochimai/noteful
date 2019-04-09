@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route, Link, withRouter } from "react-router-dom";
 import "./App.css";
 import AddFolderPage from './Components/Folder/AddFolderPage';
 import NotePage from './Components/Notes/NotePage'
@@ -31,6 +31,20 @@ getNotes= notes=>{
     notes, 
     error:null
   })
+}
+deleteNote= NoteId=>{
+  console.log(`this is what delete note does`,NoteId)
+  const newNotes= this.state.notes.filter(note=>
+    note.id !==NoteId
+    )
+    this.props.history.push('/')
+    this.setState({
+      notes: newNotes
+    })
+   
+      
+    
+    
 }
   componentDidMount() {
     console.log("App mounted");
@@ -104,6 +118,7 @@ getNotes= notes=>{
     const contextValue = {
       notes: this.state.notes,
       folders: this.state.folders,
+      deleteNote: this.deleteNote,
     }
     
 
@@ -147,4 +162,4 @@ getNotes= notes=>{
   }
 }
 
-export default App;
+export default withRouter(App);
