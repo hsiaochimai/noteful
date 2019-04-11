@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom"
-import BackButton from '../../BackButton'
 import '../../App.css'
 import NotefulContext from '../../NotefulContext'
 import ValidationError from '../ValidationErrors/ValidationError'
@@ -139,7 +137,7 @@ handleNoteSubmit(e) {
         folderId:'',
        name: "",
       });
-      this.context.addNote(newNote);
+      this.context.addNote(data);
     })
     .catch(err => {
       this.setState({

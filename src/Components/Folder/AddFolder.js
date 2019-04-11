@@ -48,7 +48,7 @@ handleFolderSubmit(e) {
         id: "",
        name: "",
       });
-      this.context.addFolder(newFolder);
+      this.context.addFolder(data);
     })
     .catch(err => {
       this.setState({

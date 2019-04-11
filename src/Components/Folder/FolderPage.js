@@ -12,7 +12,8 @@ static contextType= NotefulContext
     render() {
         
         const folderID = this.props.match.params.folderID
-        let getNotes = this.context.notes.filter(note => note.folderId === folderID)
+        const notes = this.context.notes.filter(note => note.folderId === folderID)
+        console.log(`this is the notes in folderpage`, notes)
         const folders  = this.context.folders
         return (
             <div className='mainpage'>
@@ -23,7 +24,7 @@ static contextType= NotefulContext
                     </Link>
                 </div>
                 <div className='main'>
-                    <NoteList notes={getNotes} />
+                    <NoteList notes={notes} />
                     <Link to='/addNote'>
                         <button>Add Note</button>
                     </Link>
