@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Folder from './Folder'
+import Folder from './Components/Folder/Folder'
 import NoteList from './Components/Notes/NoteList'
 import AddNote from './Components/Notes/AddNotePage'
 import AddFolder from './Components/Folder/AddFolder'

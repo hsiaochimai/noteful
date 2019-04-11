@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import Folder from '../../Folder'
+import Folder from '../Folder/Folder'
 import NoteList from './NoteList'
 import NoteContent from './NoteContent'
 import BackButton from '../../BackButton'

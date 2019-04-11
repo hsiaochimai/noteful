@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom"
-import "./App.css"
+import '../../App.css'
+import NotefulContext from "../../NotefulContext";
 
 class Folder extends Component {
+    static contextType= NotefulContext
     render() {
         console.log(`these were the props that were sent to folder`, this.props.folders)
 

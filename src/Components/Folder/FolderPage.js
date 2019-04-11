@@ -4,7 +4,7 @@ import AddNote from '../Notes/AddNotePage'
 import AddFolder from './AddFolder'
 import '../../App.css'
 import NotefulContext from '../../NotefulContext'
-import Folder from '../../Folder';
+import Folder from './Folder';
 import {Link} from 'react-router-dom'
 
 class FolderPage extends Component {

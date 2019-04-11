@@ -34,7 +34,7 @@ class NoteList extends Component {
   static contextType=NotefulContext
   render() {
     console.log(`these were the props sent to notelist`, this.context)
-    let notes=this.props.notes.map((note,i) =>{
+    let notes=this.context.notes.map((note,i) =>{
       return(
       
       <div className='noteDetails'key={i}>

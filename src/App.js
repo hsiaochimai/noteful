@@ -9,6 +9,7 @@ import NotefulContext from './NotefulContext'
 import MainPage from './MainPage'
 import AddNotePage from './Components/Notes/AddNotePage'
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -87,38 +88,29 @@ deleteNote= NoteId=>{
 
   
 
-  // getFolderID(routerProps) {
-  //   console.log(`this is routerProps`, routerProps);
-  //   return routerProps.match.params.folderID || null;
-  // }
- 
-  // renderMainPage = routerProps => {
-  //   let { folders, notes } = this.state;
-  //   const folderID = this.getFolderID(routerProps);
-  //   if (folderID) {
-  //     //copy and filter notes from this.state
-  //     notes = [...notes].filter(note => note.folderId === folderID);
-  //     console.log(`this is what notes is doing`, notes);
-  //   }
-
-  //   return (
-  //     <>
-  //       <MainPage key="FolderList" {...routerProps} />
-  //     </>
-  //   );
-  // };
- 
-
   onFolderAdd = folder => {
     //TODO implement this
     //HINT need to setState to include newly added folder
-  };
+    this.props.history.push('/')
+    this.setState({
+      folders: [...this.state.folders, folder]
+    })
 
+  };
+  onNoteAdd= note=>{
+    this.props.history.push('/')
+    this.setState({
+      notes: [...this.state.notes, note]
+    })
+  }
+  
   render() {
     const contextValue = {
       notes: this.state.notes,
       folders: this.state.folders,
       deleteNote: this.deleteNote,
+      addFolder: this.onFolderAdd,
+      addNote:this.onNoteAdd
     }
     
 
