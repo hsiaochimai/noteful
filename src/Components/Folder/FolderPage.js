@@ -12,12 +12,12 @@ static contextType= NotefulContext
         const folderID = this.props.match.params.folderID
         const notes = this.context.notes.filter(note => note.folderId === folderID)
         console.log(`this is the notes in folderpage`, notes)
-        const folders  = this.context.folders
+        const folders  = this.context.folders 
         return (
             
             <div className='mainpage'>
                 <div className='sidebar'>
-                <ErrorBoundary>
+                <ErrorBoundary>                    
                     <Folder folders={folders} />
                     <Link to="/addFolder">
                         <button>Add Folder</button>

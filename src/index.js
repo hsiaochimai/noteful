@@ -1,22 +1,22 @@
+import { createBrowserHistory } from 'history';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Link } from "react-router-dom"
-import { createBrowserHistory } from 'history';
-
-import './index.css';
+import { Router } from "react-router-dom";
 import App from './App';
-import store from './dummy-store'
+import store from './dummy-store';
+import './index.css';
 import * as serviceWorker from './serviceWorker';
+
 
 const history = createBrowserHistory();
 
 ReactDOM.render(
-    <BrowserRouter history={history}>
+    <Router history={history}>
 
-        <App key='App' STORE={store}/>
-        
+        <App key='App' STORE={store} />
 
-    </BrowserRouter>,
+
+    </Router>,
 
     document.getElementById('root'));
 
