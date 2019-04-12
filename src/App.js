@@ -8,9 +8,15 @@ import FolderPage from './Components/Folder/FolderPage'
 import NotefulContext from './NotefulContext'
 import MainPage from './MainPage'
 import AddNotePage from './Components/Notes/AddNotePage'
+import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary'
+import PropTypes from 'prop-types'
 
 
 class App extends Component {
+  static propTypes= {
+    history: PropTypes.object.isRequired,
+    match: PropTypes.object.isRequired,
+  }
   constructor(props) {
     super(props);
     //shallow copy the initial state from the STORE prop
@@ -115,6 +121,7 @@ deleteNote= NoteId=>{
     
 
     return (
+      <ErrorBoundary>
       <div className="App">
         <Header />
         <NotefulContext.Provider value={contextValue}>
@@ -150,6 +157,7 @@ deleteNote= NoteId=>{
 
         </NotefulContext.Provider>
       </div>
+      </ErrorBoundary>
     );
   }
 }

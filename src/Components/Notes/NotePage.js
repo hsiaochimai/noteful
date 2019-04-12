@@ -5,6 +5,7 @@ import NoteContent from './NoteContent'
 import BackButton from '../../BackButton'
 import '../../App.css'
 import NotefulContext from '../../NotefulContext';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 class NotePage extends Component{
 static contextType=NotefulContext
     render(){
@@ -17,12 +18,16 @@ static contextType=NotefulContext
         return(
             <div className='mainpage'>
             <div className='sidebar'>
+            <ErrorBoundary>
             <BackButton history={this.props.history}/>
             <Folder folders={folders}/>
+            </ErrorBoundary>
             </div>
             <div className='main'>
+            <ErrorBoundary>
             <NoteList notes={getNote}/>
             <NoteContent notes={getNote}/> 
+            </ErrorBoundary>
             </div>
         </div>
         )
