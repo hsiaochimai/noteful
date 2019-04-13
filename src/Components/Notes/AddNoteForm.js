@@ -133,6 +133,7 @@ class AddNoteForm extends Component {
             .then(data => {
                 console.log(data)
                 this.setState({
+                    error:null,
                     content: "",
                     folderId: '',
                     name: "",
@@ -146,6 +147,7 @@ class AddNoteForm extends Component {
             });
     }
     render() {
+        const errorMessage = this.state.error ? (<h3>Please retry</h3>) : null
         let folders = this.context.folders.map(folder => {
             return <option key={folder.id} value={folder.id}>{folder.name}</option>
         })
@@ -154,6 +156,7 @@ class AddNoteForm extends Component {
             <form onSubmit={e => this.handleNoteSubmit(e)}>
                 <div className='AddFolderForm'>
                     <h3>Create a Note</h3>
+                    {errorMessage}
                     <label htmlFor='name'>Name</label>
                     <input type='text' id='name' name='noteName' onChange={e => this.noteNameChanged(e.target.value)} />
                     <ValidationError hasError={!this.state.noteValid} message={this.state.validationMessages.name} />
