@@ -45,6 +45,7 @@ export default class AddFolder extends Component {
             .then(data => {
                 console.log(data)
                 this.setState({
+                    error:null,
                     id: "",
                     name: "",
                 });
@@ -84,11 +85,13 @@ export default class AddFolder extends Component {
         })
     }
     render() {
+        const errorMessage = this.state.error ? (<h3>Please retry</h3>) : null
         return (
 
             <form onSubmit={e => this.handleFolderSubmit(e)}>
                 <div className='AddFolderForm'>
                     <h3>Create a Folder</h3>
+                    {errorMessage}
                     <label for='name'>Name</label>
                     <input type='text' id='name' name='folderName' onChange={e => this.folderChanged(e.target.value)} />
                     <ValidationError hasError={!this.state.folderValid} message={this.state.validationMessages.name} />
