@@ -1,11 +1,11 @@
 import { Component } from "react";
-import pt from 'prop-types'
+import PropTypes from 'prop-types'
 
 
 export default class DataLoader extends Component {
     static propTypes = {
-        url: pt.string.isRequired,
-        onDataLoaded: pt.func.isRequired,
+        url: PropTypes.string.isRequired,
+        onDataLoaded: PropTypes.func.isRequired,
     }
     constructor(props) {
         super(props);

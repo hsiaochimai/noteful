@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import '../../App.css';
 import NotefulContext from '../../NotefulContext';
+import PropTypes from 'prop-types'
 
 
 function deleteNoteRequest(noteId, cb) {
@@ -30,7 +31,9 @@ function deleteNoteRequest(noteId, cb) {
 
 
 class NoteList extends Component {
-
+static propTypes={
+notes: PropTypes.array.isRequired,
+}
   static contextType = NotefulContext
   render() {
     console.log(`these were the props sent to notelist`, this.props)

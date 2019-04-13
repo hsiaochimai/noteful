@@ -5,8 +5,13 @@ import NotefulContext from '../../NotefulContext'
 import Folder from './Folder';
 import {Link} from 'react-router-dom'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
+import PropTypes from 'prop-types'
 class FolderPage extends Component {
+    static propTypes={
+        match: PropTypes.object.isRequired
+    }
 static contextType= NotefulContext
+
     render() {
         
         const folderID = this.props.match.params.folderID
