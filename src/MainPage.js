@@ -15,7 +15,7 @@ class MainPage extends Component{
                     <ErrorBoundary>
                         <Folder folders={this.context.folders} />
                         <Link to="/addFolder">
-                        <button>Add Folder</button>
+                        <button className="addFolderButton">Add Folder</button>
                         </Link>
                         </ErrorBoundary>
                     </div>
@@ -23,7 +23,7 @@ class MainPage extends Component{
                     <ErrorBoundary>
                         <NoteList notes={this.context.notes} />
                         <Link to='/addNote'>
-                            <button>Add Note</button>
+                            <button className="addNoteButton">Add Note</button>
                         </Link>
                         </ErrorBoundary>
                     </div>

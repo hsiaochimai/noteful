@@ -47,7 +47,7 @@ notes: PropTypes.array.isRequired,
             <h3>{note.name}</h3>
           </Link>
           <p>Modified on:{note.modified}</p>
-          <button onClick={() => {
+          <button className='noteDeleteButton'onClick={() => {
             console.log(`this was clicked`, note.id)
             deleteNoteRequest(
               note.id,

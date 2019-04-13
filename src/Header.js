@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 import "./App.css";
 const Header = () => {
     return (
-        <Link to='/'>
             <header>
+                <Link to='/'>
                 <h1>Noteful</h1>
+                </Link>
             </header>
-        </Link>
+        
     )
 }
 Header.propTypes = {

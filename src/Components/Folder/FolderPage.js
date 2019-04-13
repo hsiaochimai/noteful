@@ -25,7 +25,7 @@ static contextType= NotefulContext
                 <ErrorBoundary>                    
                     <Folder folders={folders} />
                     <Link to="/addFolder">
-                        <button>Add Folder</button>
+                        <button className="addFolderButton">Add Folder</button>
                     </Link>
                     </ErrorBoundary>
                 </div>
@@ -33,7 +33,7 @@ static contextType= NotefulContext
                 <ErrorBoundary>
                     <NoteList notes={notes} />
                     <Link to='/addNote'>
-                        <button>Add Note</button>
+                        <button className="addNoteButton">Add Note</button>
                     </Link>
                 </ErrorBoundary>
                 </div>

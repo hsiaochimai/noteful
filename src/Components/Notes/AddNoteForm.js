@@ -154,7 +154,7 @@ class AddNoteForm extends Component {
         return (
 
             <form onSubmit={e => this.handleNoteSubmit(e)}>
-                <div className='AddFolderForm'>
+                <div className='AddNoteForm'>
                     <h3>Create a Note</h3>
                     {errorMessage}
                     <label htmlFor='name'>Name</label>
@@ -162,17 +162,17 @@ class AddNoteForm extends Component {
                     <ValidationError hasError={!this.state.noteValid} message={this.state.validationMessages.name} />
                     <br />
                     Content:
-                        <textarea onChange={e => this.noteContentChanged(e.target.value)} />
+                        <textarea type='text' onChange={e => this.noteContentChanged(e.target.value)} />
                     <ValidationError hasError={!this.state.contentValid} message={this.state.validationMessages.content} />
                     <br />
                     Folders:
-                        <select onChange={e => this.folderIdChanged(e.target.value)}>
+                        <select className='folder-select' onChange={e => this.folderIdChanged(e.target.value)}>
                         <option value='' disabled defaultValue>Choose a Folder</option>
                         {folders}
                     </select>
                     <ValidationError hasError={!this.state.folderValid} message={this.state.validationMessages.folders} />
                 </div>
-                <button type='submit' disabled={!this.state.formValid}>Add Note</button>
+                <button type='submit' disabled={!this.state.formValid} className='addNoteButton'>Add Note</button>
             </form>
 
         )

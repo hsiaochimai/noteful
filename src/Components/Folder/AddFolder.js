@@ -96,7 +96,7 @@ export default class AddFolder extends Component {
                     <input type='text' id='name' name='folderName' onChange={e => this.folderChanged(e.target.value)} />
                     <ValidationError hasError={!this.state.folderValid} message={this.state.validationMessages.name} />
                 </div>
-                <button type='submit' disabled={!this.state.formValid}>Add Folder</button>
+                <button className="addFolderButton" type='submit' disabled={!this.state.formValid}>Add Folder</button>
             </form>
 
         )
