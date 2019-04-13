@@ -50,65 +50,7 @@ class App extends Component {
     })
 
 
-
-
-
   }
-/*
-  componentDidMount() {
-    // this.fetchData()
-  }
-
-  fetchData = () => {
-    console.log("App mounted");
-    const fetchFoldersP = fetch('http://localhost:9090/folders', {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-      }
-    })
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(res.status)
-        }
-        return res.json()
-      })
-      .then(resJson => {
-        console.log(`hello resJson`, resJson)
-        return this.getFolders(resJson)
-      })
-    // .catch(error => {
-    //   this.setState({ error })
-    //   console.warn('Failed to fetch')
-    //   // throw error
-    // })
-
-    const fetchNotesP = fetch('http://localhost:909/notes', {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-      }
-    })
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(res.status)
-        }
-        return res.json()
-      })
-      .then(resJson => {
-        console.log(`hello Notes resJson`, resJson)
-        return this.getNotes(resJson)
-      })
-    // .catch(error => this.setState({ error }))
-    Promise.all([fetchFoldersP, fetchNotesP]).catch(error => {
-      this.setState({ error })
-      console.warn('Failed to fetch')
-      // throw error
-    })
-  }
-
-//*/
-
 
   onFolderAdd = folder => {
     //TODO implement this

@@ -10,10 +10,9 @@ export default class AddFolderPage extends Component {
         return (
             
             <div className='AddFolderPage'>
-            <ErrorBoundary>
             <BackButton history={this.props.history}/>
             <AddFolder />
-            </ErrorBoundary>
+            
             </div>
             
         )

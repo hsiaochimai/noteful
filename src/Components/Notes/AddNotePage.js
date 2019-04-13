@@ -7,10 +7,8 @@ class AddNotePage extends Component {
     render() {
         return (
             <div className='AddNotePage'>
-                <ErrorBoundary>
                     <BackButton history={this.props.history} />
                     <AddNoteForm />
-                </ErrorBoundary>
             </div>
         )
     }

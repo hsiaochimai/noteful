@@ -4,7 +4,7 @@ import React, {Component} from 'react'
         console.log(`this is in the note content`,this.props.notes)
         let noteContent=this.props.notes.map(note=>{
             return(
-                <p>
+                <p key={note.id}>
                   {note.content}  
                 </p>
            )
