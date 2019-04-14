@@ -6,7 +6,7 @@ class BackButton extends Component{
         history: PropTypes.object.isRequired,
     }
     render(){
-        return<div className='BackButton'>
+        return<div className='BackButton'role='navigation'>
         <button onClick={()=>this.props.history.goBack()}>
             Back
         </button>

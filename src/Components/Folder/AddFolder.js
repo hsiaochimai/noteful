@@ -89,10 +89,10 @@ export default class AddFolder extends Component {
         return (
 
             <form onSubmit={e => this.handleFolderSubmit(e)}>
-                <div className='AddFolderForm'>
-                    <h3>Create a Folder</h3>
+                <div className='AddFolderForm' role='form'>
+                    <h2>Create a Folder</h2>
                     {errorMessage}
-                    <label for='name'>Name</label>
+                    <label htmlFor='name'>Name</label>
                     <input type='text' id='name' name='folderName' onChange={e => this.folderChanged(e.target.value)} />
                     <ValidationError hasError={!this.state.folderValid} message={this.state.validationMessages.name} />
                 </div>

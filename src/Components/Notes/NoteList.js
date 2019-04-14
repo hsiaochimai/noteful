@@ -42,9 +42,9 @@ notes: PropTypes.array.isRequired,
     let notesHTML = this.props.notes.map((note, i) => {
       return (
 
-        <div className='noteDetails' key={i}>
+        <div className='noteDetails' role='main'key={i}>
           <Link to={`/note/${note.id}`}>
-            <h3>{note.name}</h3>
+            <h2>{note.name}</h2>
           </Link>
           <p>Modified on:{note.modified}</p>
           <button className='noteDeleteButton'onClick={() => {
