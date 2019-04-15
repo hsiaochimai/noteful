@@ -14,6 +14,9 @@ static propTypes={
     history:PropTypes.object.isRequired,
 }
     render(){
+        console.log(`NotePage render time!`)
+        // debugger
+        // return 'Foo!'
         const noteID = this.props.match.params.noteID
         let getNote=this.context.notes.filter(note => note.id === noteID)
         const notes=getNote[0].folderId

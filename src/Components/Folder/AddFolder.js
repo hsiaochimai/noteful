@@ -45,7 +45,7 @@ export default class AddFolder extends Component {
             .then(data => {
                 console.log(data)
                 this.setState({
-                    error:null,
+                    error: null,
                     id: "",
                     name: "",
                 });
