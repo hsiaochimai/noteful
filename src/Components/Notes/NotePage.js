@@ -14,12 +14,15 @@ static propTypes={
     history:PropTypes.object.isRequired,
 }
     render(){
-        const noteID = this.props.match.params.noteID
-        let getNote=this.context.notes.filter(note => note.id === noteID)
-        const notes=getNote[0].folderId
-        const folders=this.context.folders.filter(folder=> folder.id===notes)
-        console.log(`this was passed to NoteContent`, folders)
+        const noteID = parseInt(this.props.match.params.noteID)
         
+        let getNote=this.context.notes.filter(note => note.id === noteID)
+        
+        const notes=getNote[0].folder_id
+        
+         const folders=this.context.folders.filter(folder=> folder.id===notes)
+         
+                
         return(
             <div className='mainpage'>
             <div className='sidebar'>

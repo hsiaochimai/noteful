@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 
 
 function deleteNoteRequest(noteId, cb) {
-  fetch(`http://localhost:9090/notes/${noteId}`, {
+  fetch(`http://localhost:8000/api/notes/${noteId}`, {
     method: 'DELETE',
     headers: {
       'content-type': 'application/json',
@@ -18,12 +18,9 @@ function deleteNoteRequest(noteId, cb) {
           throw error
         })
       }
-      return res.json()
-    })
-    .then(data => {
-      console.log({ data })
       cb(noteId)
     })
+    
     .catch(error => {
       console.log(error)
     })
@@ -44,9 +41,8 @@ notes: PropTypes.array.isRequired,
 
         <div className='noteDetails' role='main'key={i}>
           <Link to={`/note/${note.id}`}>
-            <h2>{note.name}</h2>
+            <h2>{note.note_name}</h2>
           </Link>
-          <p>Modified on:{note.modified}</p>
           <button className='noteDeleteButton'onClick={() => {
             console.log(`this was clicked`, note.id)
             deleteNoteRequest(
@@ -54,6 +50,8 @@ notes: PropTypes.array.isRequired,
               this.context.deleteNote)
           }
           }> Delete</button>
+          <p>Modified on:{note.modified}</p>
+          
         </div>
 
       )

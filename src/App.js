@@ -92,11 +92,11 @@ class App extends Component {
         <Header />
         <ErrorBoundary>
           <DataLoader
-            url={'http://localhost:9090/folders'}
+            url={'http://localhost:8000/api/folders'}
             onDataLoaded={this.setFolders}
           />
           <DataLoader
-            url={'http://localhost:9090/notes'}
+            url={'http://localhost:8000/api/notes'}
             onDataLoaded={this.setNotes}
           />
         </ErrorBoundary>

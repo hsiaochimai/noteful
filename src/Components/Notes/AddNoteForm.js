@@ -46,7 +46,7 @@ class AddNoteForm extends Component {
     );
   }
   folderIdChanged(folderId) {
-    console.log(folderId);
+    console.log(`folderId is`,folderId);
     this.setState(
       {
         folderId
@@ -130,16 +130,16 @@ class AddNoteForm extends Component {
     console.log(`this clicked`);
     const newNote = {
       content: this.state.content,
-      folderId: this.state.folderId,
-      name: this.state.name,
+      folder_id: this.state.folderId,
+      note_name: this.state.name,
       modified: new Date().toISOString()
     };
-    //  const newNote = (({content, folderId, name}) => ({content, folderId, name}))(this.state);
+    //  const newNote = (({content, folder_id, name}) => ({content, folder_id, name}))(this.state);
     console.log(
       `this is what the JSON springify does`,
       JSON.stringify(newNote)
     );
-    const url = "http://localhost:9090/notes";
+    const url = "http://localhost:8000/api/notes";
     const options = {
       method: "POST",
       body: JSON.stringify(newNote),
@@ -159,8 +159,8 @@ class AddNoteForm extends Component {
         this.setState({
           error: null,
           content: "",
-          folderId: "",
-          name: ""
+          folder_id: "",
+          note_name: ""
         });
         this.context.addNote(data);
       })
@@ -175,7 +175,7 @@ class AddNoteForm extends Component {
     let folders = this.context.folders.map(folder => {
       return (
         <option key={folder.id} value={folder.id}>
-          {folder.name}
+          {folder.folder_name}
         </option>
       );
     });
@@ -218,7 +218,7 @@ class AddNoteForm extends Component {
             aria-label="dropdown menu of folders"
             onChange={e => this.folderIdChanged(e.target.value)}
           >
-            <option value="" disabled defaultValue>
+            <option value="" disabled selected>
               Choose a Folder
             </option>
             {folders}

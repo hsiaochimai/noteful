@@ -15,7 +15,7 @@ class Folder extends Component {
             return (
                 <li key={i}>
                 <Link  to={`/folder/${folder.id}`}>
-                    {folder.name}
+                    {folder.folder_name}
                 </Link>
                 </li>
             )
