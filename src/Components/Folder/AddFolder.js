@@ -24,10 +24,7 @@ export default class AddFolder extends Component {
     }
     handleFolderSubmit(e) {
         e.preventDefault();
-        console.log(`this clicked`)
         const newFolder = {folder_name: this.state.name}
-        // (({ name }) => ({ name }))(this.state);
-        console.log(`this is what the JSON springify does`, JSON.stringify(newFolder))
         const url = 'http://localhost:8000/api/folders';
         const options = {
             method: 'POST',

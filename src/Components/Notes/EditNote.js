@@ -20,7 +20,6 @@ export default class EditNoteForm extends Component {
   };
   componentDidMount() {
     const noteId = parseInt(this.props.match.params.noteid);
-    console.log(noteId);
     fetch(`http://localhost:8000/api/notes/${noteId}`, {
       method: "GET",
       headers: {
@@ -37,7 +36,6 @@ export default class EditNoteForm extends Component {
         return res.json();
       })
       .then(resJson => {
-        console.log(resJson);
 
         this.setState({
           id: resJson.id,
@@ -60,19 +58,11 @@ export default class EditNoteForm extends Component {
     }
   )
   }
-  // = e => {
-  //   this.setState({ note_name: e.target.value });
-  // };
-
-  
   handleChangeContent(content){
     this.setState({content}, ()=>{
       this.validateContent(content)
     })
   }
-  // = e => {
-  //   this.setState({ content: e.target.value });
-  // };
   validateNoteName(fieldValue) {
     const fieldErrors = { ...this.state.validationMessages };
     let hasError = false;
@@ -202,7 +192,7 @@ export default class EditNoteForm extends Component {
             message={this.state.validationMessages.content}
           />
 
-          <div classname="EditNoteButtons">
+          <div className="EditNoteButtons">
             <button
               className="cancel"
               type="button"

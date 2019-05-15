@@ -51,7 +51,7 @@ notes: PropTypes.array.isRequired,
               this.context.deleteNote)
           }
           }> Delete</button>
-          <Link to={`edit/note/${note.id}`}>
+          <Link to={`/edit/note/${note.id}`}>
             <button className="editNoteButton">Edit Note</button>
                         </Link>
                         </div>

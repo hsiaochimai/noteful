@@ -40,7 +40,7 @@ header a:hover{
 }
 .addFolderButton{
   font-size: 18px;
-  background-color: #084C61;
+  background-color: #571F4E;
   border: none;
   margin-left: 20px;
   color:#F7FFF7;
@@ -154,4 +154,30 @@ min-width: 30%;
 }
 .noteContent p{
   padding:10px;
+}
+.folderDetails{
+  display:flex;
+  flex-direction: column;
+}
+.EditFolderForm label{
+  font-size: 18px;
+  margin-right:10px;
+}
+.EditFolderForm input[type='text']{
+  font-size:24px;
+}
+.EditFolderForm input{
+  margin-bottom: 20px;
+  min-width: 30%;
+  }
+.editFolderbuttons button{
+  margin-top: 20px;
+  background-color: #084C61;
+  border:none;
+  color:#F7FFF7;
+  font-size: 18px;
+  margin-left: 20px;
+}
+.editFolderbuttons button :hover{
+  background-color: #000000;
 }

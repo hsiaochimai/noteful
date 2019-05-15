@@ -19,7 +19,6 @@ export default class EditFolderForm extends Component {
     }
     componentDidMount() {
         const folderId = parseInt(this.props.match.params.folderID);
-        console.log(`this is folderid`,folderId);
         fetch(`http://localhost:8000/api/folders/${folderId}`, {
           method: "GET",
           headers: {
@@ -139,7 +138,7 @@ handleClickCancel = () => {
             >
               Cancel
             </button>
-            <button className="addFolderButton" type='submit' disabled={!this.state.formValid}>Save</button>
+            <button className="editFolderSave" type='submit' disabled={!this.state.formValid}>Save</button>
             </div>
         </form>
           )

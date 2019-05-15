@@ -24,7 +24,6 @@ class AddNoteForm extends Component {
     };
   }
   noteNameChanged(name) {
-    console.log(name);
     this.setState(
       {name},
       () => {
@@ -33,7 +32,6 @@ class AddNoteForm extends Component {
     );
   }
   noteContentChanged(content) {
-    console.log(content);
     this.setState(
       {
         content
@@ -79,7 +77,7 @@ class AddNoteForm extends Component {
   validateContent(fieldValue) {
     const fieldErrors = { ...this.state.validationMessages };
     let hasError = false;
-    // fieldValue=fieldValue.trim();
+    fieldValue=fieldValue.trim();
     if (fieldValue.length === 0) {
       fieldErrors.content = "Content is required";
       hasError = true;
@@ -132,7 +130,7 @@ class AddNoteForm extends Component {
       note_name: this.state.name,
       modified: new Date().toISOString()
     };
-    //  const newNote = (({content, folder_id, name}) => ({content, folder_id, name}))(this.state);
+    
     console.log(
       `this is what the JSON springify does`,
       JSON.stringify(newNote)
@@ -153,7 +151,6 @@ class AddNoteForm extends Component {
         return res.json();
       })
       .then(data => {
-        console.log(data);
         this.setState({
           error: null,
           content: "",

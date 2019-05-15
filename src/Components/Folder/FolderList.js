@@ -7,7 +7,6 @@ static propTypes={
     folders: PropTypes.array.isRequired,
 }
     render(){
-        console.log(`these were the props passed to Folderlist`, this.props.folders)
         return(
             <div className='Folderlist'>
             <Folder folders={this.props.folders}/>

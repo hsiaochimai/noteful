@@ -9,8 +9,6 @@ class Folder extends Component {
     }
     static contextType = NotefulContext
     render() {
-        console.log(`these were the props that were sent to folder`, this.props.folders)
-       
         let folders = this.props.folders.map((folder, i) => {
             return (
                 <div className='folderDetails'key={i}>
@@ -20,7 +18,7 @@ class Folder extends Component {
                 </Link>
                 </h2>
                 <div className='folderButtons'>
-                <Link to={`edit/folder/${folder.id}`}>
+                <Link to={`/edit/folder/${folder.id}`}>
             <button className="editNoteButton">Edit Folder</button>
                         </Link>
                 </div>

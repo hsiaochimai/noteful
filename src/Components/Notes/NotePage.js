@@ -15,10 +15,13 @@ static propTypes={
 }
     render(){
         const noteID = parseInt(this.props.match.params.noteID)
-        
+        console.log(`this is noteID`,noteID)
+        let contextNote=this.context.notes
+        console.log(`this is contextNote`,contextNote)
         let getNote=this.context.notes.filter(note => note.id === noteID)
         
-        const notes=getNote[0].folder_id
+        console.log(`this is getNote`,getNote)
+         const notes=getNote[0].folder_id
         
          const folders=this.context.folders.filter(folder=> folder.id===notes)
          
