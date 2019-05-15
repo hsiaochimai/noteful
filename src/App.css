@@ -48,7 +48,9 @@ header a:hover{
 .addFolderButton:hover{
   background-color: #000000;
 }
-
+.folderDetails{
+  display:flex;
+}
 .noteDetails a{
   text-decoration: none;
   color:#000000;
