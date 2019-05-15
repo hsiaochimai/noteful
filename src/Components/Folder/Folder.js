@@ -13,11 +13,18 @@ class Folder extends Component {
        
         let folders = this.props.folders.map((folder, i) => {
             return (
-                <li key={i}>
+                <div className='folderDetails'key={i}>
+                <h2 >
                 <Link  to={`/folder/${folder.id}`}>
                     {folder.folder_name}
                 </Link>
-                </li>
+                </h2>
+                <div className='folderButtons'>
+                <Link to={`edit/folder/${folder.id}`}>
+            <button className="editNoteButton">Edit Folder</button>
+                        </Link>
+                </div>
+                </div>
             )
 
         })

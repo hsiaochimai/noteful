@@ -19,6 +19,8 @@ static contextType= NotefulContext
         const notes = this.context.notes.filter(note => note.folder_id === folderID)
         console.log(`this is the notes in folderpage`, notes)
         const folders  = this.context.folders.filter(folder=> folder.id===folderID) 
+        const folderSelected=folders.id
+        console.log(`folders is`,folders)
         return (
             
             <div className='mainpage'>
@@ -29,6 +31,9 @@ static contextType= NotefulContext
                     {/* <Link to="/addFolder">
                         <button className="addFolderButton">Add Folder</button>
                     </Link> */}
+                    <Link to={`edit/folder/${folderID}`}>
+            <button className="editNoteButton">Edit Folder</button>
+                        </Link>
                     </ErrorBoundary>
                 </div>
                 <div className='main'>

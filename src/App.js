@@ -12,6 +12,7 @@ import MainPage from './MainPage';
 import NotefulContext from './NotefulContext';
 import DataLoader from './DataLoader'
 import EditNoteForm from './Components/Notes/EditNote'
+import EditFolderForm from './Components/Folder/EditFolder'
 
 class App extends Component {
   static propTypes = {
@@ -74,9 +75,19 @@ class App extends Component {
      ? updatedNote 
      : n
   )
-this.setState({
-  notes:newNotes
-})
+  this.setState({
+    notes: newNotes
+  })
+    }
+  updateFolder = updatedFolder =>{
+    const newFolders=this.state.folders.map(f=>
+     ( f.id===updatedFolder.id)
+     ? updatedFolder 
+     : f
+  )
+  this.setState({
+    folders: newFolders
+  })
 }
   render() {
     const { error } = this.state
@@ -93,7 +104,8 @@ this.setState({
       deleteNote: this.deleteNote,
       addFolder: this.onFolderAdd,
       addNote: this.onNoteAdd,
-      updateNote: this.updateNote
+      updateNote: this.updateNote,
+      updateFolder:this.updateFolder
     }
 
 
@@ -131,7 +143,9 @@ this.setState({
             path="/addFolder"
             component={AddFolderPage}
           />
-
+ <Route path= "/edit/folder/:folderID"
+          component={EditFolderForm}
+          />
           <Route
             path="/note/:noteID"
             component={NotePage}

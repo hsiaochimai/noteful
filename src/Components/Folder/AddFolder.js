@@ -85,6 +85,7 @@ export default class AddFolder extends Component {
             formValid: this.state.folderValid
         })
     }
+    
     render() {
         const errorMessage = this.state.error ? (<h3>Please retry</h3>) : null
         return (

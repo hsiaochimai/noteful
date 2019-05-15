@@ -14,6 +14,9 @@ const NotefulContext =React.createContext(
       },
       updateNote: ()=>{
         
+      },
+      updateFolder: ()=>{
+
       }
     }
 )
