@@ -43,6 +43,7 @@ notes: PropTypes.array.isRequired,
           <Link to={`/note/${note.id}`}>
             <h2>{note.note_name}</h2>
           </Link>
+          <div className='noteButtons'>
           <button className='noteDeleteButton'onClick={() => {
             console.log(`this was clicked`, note.id)
             deleteNoteRequest(
@@ -50,6 +51,10 @@ notes: PropTypes.array.isRequired,
               this.context.deleteNote)
           }
           }> Delete</button>
+          <Link to={`edit/note/${note.id}`}>
+            <button className="editNoteButton">Edit Note</button>
+                        </Link>
+                        </div>
           <p>Modified on:{note.modified}</p>
           
         </div>

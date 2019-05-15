@@ -11,6 +11,9 @@ const NotefulContext =React.createContext(
       },
       deleteNote: ()=>{
         
+      },
+      updateNote: ()=>{
+        
       }
     }
 )

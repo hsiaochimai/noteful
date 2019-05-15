@@ -11,6 +11,7 @@ import Header from "./Header";
 import MainPage from './MainPage';
 import NotefulContext from './NotefulContext';
 import DataLoader from './DataLoader'
+import EditNoteForm from './Components/Notes/EditNote'
 
 class App extends Component {
   static propTypes = {
@@ -66,8 +67,17 @@ class App extends Component {
     this.setState({
       notes: [...this.state.notes, note]
     })
-  }
-
+  };
+  updateNote = updatedNote =>{
+    const newNotes=this.state.notes.map(n=>
+     ( n.id===updatedNote.id)
+     ? updatedNote 
+     : n
+  )
+this.setState({
+  notes:newNotes
+})
+}
   render() {
     const { error } = this.state
     if (error) {
@@ -82,7 +92,8 @@ class App extends Component {
       folders: this.state.folders,
       deleteNote: this.deleteNote,
       addFolder: this.onFolderAdd,
-      addNote: this.onNoteAdd
+      addNote: this.onNoteAdd,
+      updateNote: this.updateNote
     }
 
 
@@ -129,6 +140,9 @@ class App extends Component {
           <Route
             path='/addNote'
             component={AddNotePage}
+          />
+          <Route path= "/edit/note/:noteid"
+          component={EditNoteForm}
           />
 
 

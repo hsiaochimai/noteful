@@ -57,6 +57,10 @@ header a:hover{
 .noteDetails a:hover{
   color:#F7FFF7;
 }
+.noteButtons{
+  display:flex;
+  padding: 10px;
+}
 .noteDeleteButton{
   font-size: 18px;
   background-color: #084C61;
@@ -64,6 +68,15 @@ header a:hover{
   color:#F7FFF7;
 }
 .noteDeleteButton:hover{
+  background-color: #000000;
+}
+.editNoteButton{
+  font-size: 18px;
+  background-color: #084C61;
+  border: none;
+  color:#F7FFF7;
+}
+.editNoteButton:hover{
   background-color: #000000;
 }
 .addNoteButton{
@@ -84,36 +97,49 @@ header a:hover{
   font-size: 18px;
   margin-left: 20px;
 }
-.AddFolderForm h3{
+.AddFolderForm, .EditNoteForm, .AddNoteForm h3{
   font-size:20px;
 }
-.AddFolderForm label{
+.AddFolderForm, .EditNoteForm, .AddNoteForm label{
   font-size: 18px;
   margin-right:10px;
 }
-.AddFolderForm input{
+.AddFolderForm, .EditNoteForm, .AddNoteForm  input{
 margin-bottom: 20px;
 min-width: 30%;
 }
 .AddFolderForm input[type='text']{
   font-size:24px;
 }
-.AddNoteForm h3{
-  font-size:20px;
-}
-.AddNoteForm label{
-  font-size: 18px;
-  margin-right:10px;
-}
-.AddNoteForm input{
-margin-bottom: 20px;
-min-width: 30%;
-}
 .AddNoteForm input[type='text']{
   font-size:24px;
 }
-.AddNoteForm textarea{
-  min-width: 30%;
+.EditNoteForm input[type='text']{
+  font-size:24px;
+}
+.EditNoteForm{
+  display:flex;
+  flex-direction: column;
+}
+.EditNoteForm, textarea{
+  min-width: 40%;
+}
+.EditNoteForm textarea[type='text']{
+  font-size:20px; 
+}
+.EditNoteForm button{
+  margin-top: 20px;
+  background-color: #084C61;;
+  border:none;
+  color:#F7FFF7;
+  font-size: 18px;
+  margin-left: 20px;
+}
+.EditBookmarkButtons :hover{
+  background-color: #000000;
+}
+.AddNoteForm, textarea{
+  min-width: 40%;
 }
 .AddNoteForm textarea[type='text']{
   font-size:20px; 

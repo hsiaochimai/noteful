@@ -26,9 +26,7 @@ class AddNoteForm extends Component {
   noteNameChanged(name) {
     console.log(name);
     this.setState(
-      {
-        name
-      },
+      {name},
       () => {
         this.validateNoteName(name);
       } //need to add the validate note name
