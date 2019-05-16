@@ -58,9 +58,13 @@ class App extends Component {
     const newFolders = this.state.folders.filter(folder =>
       folder.id !== FolderId
     )
+    const newNotes = this.state.notes.filter(note =>
+      note.folder_id !== FolderId
+    )
     this.props.history.push('/')
     this.setState({
-      folders: newFolders
+      folders: newFolders,
+      notes: newNotes,
     })
 
 
