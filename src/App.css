@@ -82,21 +82,8 @@ header a:hover {
 .noteDeleteButton:hover {
   background-color: #000000;
 }
-<<<<<<< HEAD
-.editNoteButton{
-  font-size: 18px;
-  background-color: #084C61;
-  border: none;
-  color:#F7FFF7;
-}
-.editNoteButton:hover{
-  background-color: #000000;
-}
-.addNoteButton{
-=======
 
 .addNoteButton {
->>>>>>> 6fbc2d9a939084a64f5b7e727e609e89a2a282a3
   margin-top: 20px;
   background-color: #571F4E;
   border: none;
@@ -116,68 +103,24 @@ header a:hover {
   font-size: 18px;
   margin-left: 20px;
 }
-<<<<<<< HEAD
-.AddFolderForm, .EditNoteForm, .AddNoteForm h3{
-  font-size:20px;
-}
-.AddFolderForm, .EditNoteForm, .AddNoteForm label{
-=======
 
 .AddFolderForm h3 {
   font-size: 20px;
 }
 
 .AddFolderForm label {
->>>>>>> 6fbc2d9a939084a64f5b7e727e609e89a2a282a3
   font-size: 18px;
   margin-right: 10px;
 }
-<<<<<<< HEAD
-.AddFolderForm, .EditNoteForm, .AddNoteForm  input{
-margin-bottom: 20px;
-min-width: 30%;
-=======
 
 .AddFolderForm input {
   margin-bottom: 20px;
   min-width: 30%;
->>>>>>> 6fbc2d9a939084a64f5b7e727e609e89a2a282a3
 }
 
 .AddFolderForm input[type='text'] {
   font-size: 24px;
 }
-<<<<<<< HEAD
-.AddNoteForm input[type='text']{
-  font-size:24px;
-}
-.EditNoteForm input[type='text']{
-  font-size:24px;
-}
-.EditNoteForm{
-  display:flex;
-  flex-direction: column;
-}
-.EditNoteForm, textarea{
-  min-width: 40%;
-}
-.EditNoteForm textarea[type='text']{
-  font-size:20px; 
-}
-.EditNoteForm button{
-  margin-top: 20px;
-  background-color: #084C61;;
-  border:none;
-  color:#F7FFF7;
-  font-size: 18px;
-  margin-left: 20px;
-}
-.EditBookmarkButtons :hover{
-  background-color: #000000;
-}
-.AddNoteForm, textarea{
-  min-width: 40%;
-=======
 
 .AddNoteForm h3 {
   font-size: 20px;
@@ -199,7 +142,6 @@ min-width: 30%;
 
 .AddNoteForm textarea {
   min-width: 30%;
->>>>>>> 6fbc2d9a939084a64f5b7e727e609e89a2a282a3
 }
 
 .AddNoteForm textarea[type='text'] {
@@ -212,38 +154,7 @@ min-width: 30%;
   color: #F7FFF7;
   font-size: 18px;
 }
-<<<<<<< HEAD
-.noteContent p{
-  padding:10px;
-}
-.folderDetails{
-  display:flex;
-  flex-direction: column;
-}
-.EditFolderForm label{
-  font-size: 18px;
-  margin-right:10px;
-}
-.EditFolderForm input[type='text']{
-  font-size:24px;
-}
-.EditFolderForm input{
-  margin-bottom: 20px;
-  min-width: 30%;
-  }
-.editFolderbuttons button{
-  margin-top: 20px;
-  background-color: #084C61;
-  border:none;
-  color:#F7FFF7;
-  font-size: 18px;
-  margin-left: 20px;
-}
-.editFolderbuttons button :hover{
-  background-color: #000000;
-=======
 
 .noteContent p {
   padding: 10px;
->>>>>>> 6fbc2d9a939084a64f5b7e727e609e89a2a282a3
 }
