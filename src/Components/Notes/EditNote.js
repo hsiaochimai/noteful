@@ -96,7 +96,7 @@ export default class EditNoteForm extends Component {
       hasError = true;
     } else {
       if (fieldValue.length < 10) {
-        fieldErrors.content = "Note name must be at least 10 characters";
+        fieldErrors.content = "Note content must be at least 10 characters";
         hasError = true;
       } else {
         fieldErrors.content = "";

@@ -53,7 +53,18 @@ class App extends Component {
 
 
   }
+  deleteFolder = FolderId => {
+    console.log(`this is what delete note does`, FolderId)
+    const newFolders = this.state.folders.filter(folder =>
+      folder.id !== FolderId
+    )
+    this.props.history.push('/')
+    this.setState({
+      folders: newFolders
+    })
 
+
+  }
   onFolderAdd = folder => {
     //TODO implement this
     //HINT need to setState to include newly added folder
@@ -105,7 +116,8 @@ class App extends Component {
       addFolder: this.onFolderAdd,
       addNote: this.onNoteAdd,
       updateNote: this.updateNote,
-      updateFolder:this.updateFolder
+      updateFolder:this.updateFolder,
+      deleteFolder: this.deleteFolder
     }
 
 

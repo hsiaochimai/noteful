@@ -9,6 +9,7 @@ export default class EditFolderForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: '',
             folder_name: '',
             folderValid: null,
             formValid: null,
