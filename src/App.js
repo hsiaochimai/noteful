@@ -27,20 +27,25 @@ class App extends Component {
       notes: [],
       currentFolder: null,
       error: null,
+      foldersLoaded: false,
+      notesLoaded: false,
     };
   }
   setFolders = folders => {
     this.setState({
+      foldersLoaded: true,
       folders,
       // error: null,
     })
   }
   setNotes = notes => {
     this.setState({
+      notesLoaded: true,
       notes,
       // error: null
     })
   }
+
   deleteNote = NoteId => {
     console.log(`this is what delete note does`, NoteId)
     const newNotes = this.state.notes.filter(note =>
@@ -84,26 +89,26 @@ class App extends Component {
       notes: [...this.state.notes, note]
     })
   };
-  updateNote = updatedNote =>{
-    const newNotes=this.state.notes.map(n=>
-     ( n.id===updatedNote.id)
-     ? updatedNote 
-     : n
-  )
-  this.setState({
-    notes: newNotes
-  })
-    }
-  updateFolder = updatedFolder =>{
-    const newFolders=this.state.folders.map(f=>
-     ( f.id===updatedFolder.id)
-     ? updatedFolder 
-     : f
-  )
-  this.setState({
-    folders: newFolders
-  })
-}
+  updateNote = updatedNote => {
+    const newNotes = this.state.notes.map(n =>
+      (n.id === updatedNote.id)
+        ? updatedNote
+        : n
+    )
+    this.setState({
+      notes: newNotes
+    })
+  }
+  updateFolder = updatedFolder => {
+    const newFolders = this.state.folders.map(f =>
+      (f.id === updatedFolder.id)
+        ? updatedFolder
+        : f
+    )
+    this.setState({
+      folders: newFolders
+    })
+  }
   render() {
     const { error } = this.state
     if (error) {
@@ -120,8 +125,11 @@ class App extends Component {
       addFolder: this.onFolderAdd,
       addNote: this.onNoteAdd,
       updateNote: this.updateNote,
-      updateFolder:this.updateFolder,
-      deleteFolder: this.deleteFolder
+      updateFolder: this.updateFolder,
+      deleteFolder: this.deleteFolder,
+      foldersLoaded: this.deleteFolder,
+      notesLoaded: this.state.notesLoaded,
+      foldersLoaded: this.state.foldersLoaded,
     }
 
 
@@ -132,9 +140,11 @@ class App extends Component {
         <ErrorBoundary>
           <DataLoader
             url={'http://localhost:8000/api/folders'}
+            onBeforeFetch={() => this.setState({ foldersLoaded: false })}
             onDataLoaded={this.setFolders}
           />
           <DataLoader
+            onBeforeFetch={() => this.setState({ notesLoaded: false })}
             url={'http://localhost:8000/api/notes'}
             onDataLoaded={this.setNotes}
           />
@@ -159,8 +169,8 @@ class App extends Component {
             path="/addFolder"
             component={AddFolderPage}
           />
- <Route path= "/edit/folder/:folderID"
-          component={EditFolderForm}
+          <Route path="/edit/folder/:folderID"
+            component={EditFolderForm}
           />
           <Route
             path="/note/:noteID"
@@ -171,8 +181,8 @@ class App extends Component {
             path='/addNote'
             component={AddNotePage}
           />
-          <Route path= "/edit/note/:noteid"
-          component={EditNoteForm}
+          <Route path="/edit/note/:noteid"
+            component={EditNoteForm}
           />
 
 

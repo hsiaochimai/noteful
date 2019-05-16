@@ -1,183 +1,160 @@
-html{
-  background-color:#2D9686;
+html {
+  background-color: #2D9686;
 }
-header{
+
+header {
   text-align: center;
-  
 }
-header a{
+
+header a {
   text-decoration: none;
   color: #000000;
   font-size: 30px;
 }
-header a:hover{
-  color:#F7FFF7;
+
+header a:hover {
+  color: #F7FFF7;
 }
 
-
-.mainpage{
-  display:flex;
-  
+.mainpage {
+  display: flex;
 }
 
-.main{
+.main {
   margin-left: 30%;
 }
 
-.sidebar .Folder ul{
+.sidebar .Folder ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
   font-size: 20px;
-  
 }
-.sidebar a{
+
+.Folder li {
+  padding: .5em;
+  border: 2px solid pink;
+  margin-bottom: 1em;
+}
+
+.sidebar a {
   text-decoration: none;
-  color:#000000;
+  color: #000000;
 }
-.sidebar a:hover{
-  color:#F7FFF7;
+
+.sidebar a:hover {
+  color: #F7FFF7;
 }
-.addFolderButton{
+
+.addFolderButton {
   font-size: 18px;
   background-color: #571F4E;
   border: none;
   margin-left: 20px;
-  color:#F7FFF7;
+  color: #F7FFF7;
 }
-.addFolderButton:hover{
+
+.addFolderButton:disabled {
+  background-color: pink;
+}
+
+.addFolderButton:hover {
   background-color: #000000;
 }
-.folderDetails{
-  display:flex;
-}
-.noteDetails a{
+
+.noteDetails a {
   text-decoration: none;
-  color:#000000;
+  color: #000000;
   font-size: 20px;
 }
-.noteDetails a:hover{
-  color:#F7FFF7;
+
+.noteDetails a:hover {
+  color: #F7FFF7;
 }
-.noteButtons{
-  display:flex;
-  padding: 10px;
-}
-.noteDeleteButton{
+
+.noteDeleteButton {
   font-size: 18px;
   background-color: #084C61;
   border: none;
-  color:#F7FFF7;
+  color: #F7FFF7;
 }
-.noteDeleteButton:hover{
+
+.noteDeleteButton:hover {
   background-color: #000000;
 }
-.editNoteButton{
-  font-size: 18px;
-  background-color: #084C61;
+
+.addNoteButton {
+  margin-top: 20px;
+  background-color: #571F4E;
   border: none;
-  color:#F7FFF7;
-}
-.editNoteButton:hover{
-  background-color: #000000;
-}
-.addNoteButton{
-  margin-top: 20px;
-  background-color: #571F4E;
-  border:none;
-  color:#F7FFF7;
+  color: #F7FFF7;
   font-size: 18px;
 }
-.addNoteButton:hover{
+
+.addNoteButton:hover {
   background-color: #000000;
 }
-.BackButton button{
+
+.BackButton button {
   margin-top: 20px;
   background-color: #571F4E;
-  border:none;
-  color:#F7FFF7;
+  border: none;
+  color: #F7FFF7;
   font-size: 18px;
   margin-left: 20px;
 }
-.AddFolderForm, .EditNoteForm, .AddNoteForm h3{
-  font-size:20px;
+
+.AddFolderForm h3 {
+  font-size: 20px;
 }
-.AddFolderForm, .EditNoteForm, .AddNoteForm label{
+
+.AddFolderForm label {
   font-size: 18px;
-  margin-right:10px;
+  margin-right: 10px;
 }
-.AddFolderForm, .EditNoteForm, .AddNoteForm  input{
-margin-bottom: 20px;
-min-width: 30%;
-}
-.AddFolderForm input[type='text']{
-  font-size:24px;
-}
-.AddNoteForm input[type='text']{
-  font-size:24px;
-}
-.EditNoteForm input[type='text']{
-  font-size:24px;
-}
-.EditNoteForm{
-  display:flex;
-  flex-direction: column;
-}
-.EditNoteForm, textarea{
-  min-width: 40%;
-}
-.EditNoteForm textarea[type='text']{
-  font-size:20px; 
-}
-.EditNoteForm button{
-  margin-top: 20px;
-  background-color: #084C61;;
-  border:none;
-  color:#F7FFF7;
-  font-size: 18px;
-  margin-left: 20px;
-}
-.EditBookmarkButtons :hover{
-  background-color: #000000;
-}
-.AddNoteForm, textarea{
-  min-width: 40%;
-}
-.AddNoteForm textarea[type='text']{
-  font-size:20px; 
-}
-.folder-select{
-  background-color: #571F4E;
-  border:none;
-  color:#F7FFF7;
-  font-size: 18px;
-}
-.noteContent p{
-  padding:10px;
-}
-.folderDetails{
-  display:flex;
-  flex-direction: column;
-}
-.EditFolderForm label{
-  font-size: 18px;
-  margin-right:10px;
-}
-.EditFolderForm input[type='text']{
-  font-size:24px;
-}
-.EditFolderForm input{
+
+.AddFolderForm input {
   margin-bottom: 20px;
   min-width: 30%;
-  }
-.editFolderbuttons button{
-  margin-top: 20px;
-  background-color: #084C61;
-  border:none;
-  color:#F7FFF7;
-  font-size: 18px;
-  margin-left: 20px;
 }
-.editFolderbuttons button :hover{
-  background-color: #000000;
+
+.AddFolderForm input[type='text'] {
+  font-size: 24px;
+}
+
+.AddNoteForm h3 {
+  font-size: 20px;
+}
+
+.AddNoteForm label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.AddNoteForm input {
+  margin-bottom: 20px;
+  min-width: 30%;
+}
+
+.AddNoteForm input[type='text'] {
+  font-size: 24px;
+}
+
+.AddNoteForm textarea {
+  min-width: 30%;
+}
+
+.AddNoteForm textarea[type='text'] {
+  font-size: 20px;
+}
+
+.folder-select {
+  background-color: #571F4E;
+  border: none;
+  color: #F7FFF7;
+  font-size: 18px;
+}
+
+.noteContent p {
+  padding: 10px;
 }
