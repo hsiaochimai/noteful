@@ -7,6 +7,7 @@ import '../../App.css'
 import NotefulContext from '../../NotefulContext';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 import PropTypes from 'prop-types'
+<<<<<<< HEAD
 class NotePage extends Component {
     static contextType = NotefulContext
     static propTypes = {
@@ -32,6 +33,25 @@ class NotePage extends Component {
 
 
         return (
+=======
+class NotePage extends Component{
+static contextType=NotefulContext
+static propTypes={
+    match:PropTypes.object.isRequired,
+    history:PropTypes.object.isRequired,
+}
+    render(){
+        console.log(`NotePage render time!`)
+        // debugger
+        // return 'Foo!'
+        const noteID = this.props.match.params.noteID
+        let getNote=this.context.notes.filter(note => note.id === noteID)
+        const notes=getNote[0].folderId
+        const folders=this.context.folders.filter(folder=> folder.id===notes)
+        console.log(`this was passed to NoteContent`, folders)
+        
+        return(
+>>>>>>> 6fbc2d9a939084a64f5b7e727e609e89a2a282a3
             <div className='mainpage'>
                 <div className='sidebar'>
                     <ErrorBoundary>
