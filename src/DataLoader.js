@@ -6,6 +6,7 @@ export default class DataLoader extends Component {
     static propTypes = {
         url: PropTypes.string.isRequired,
         onDataLoaded: PropTypes.func.isRequired,
+        onBeforeFetch: PropTypes.func,
     }
     constructor(props) {
         super(props);
@@ -15,6 +16,10 @@ export default class DataLoader extends Component {
         }
     }
     componentDidMount() {
+        if (this.props.onBeforeFetch) {
+            this.props.onBeforeFetch(this.props.url)
+        }
+
         fetch(this.props.url)
             .then(data => data.json())
             .then(data => {
