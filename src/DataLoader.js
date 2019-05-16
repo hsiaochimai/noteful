@@ -13,7 +13,6 @@ export default class DataLoader extends Component {
         this.state = {
             // data: null,
             error: false,
-            loaded: false,
         }
     }
     componentDidMount() {
@@ -24,20 +23,17 @@ export default class DataLoader extends Component {
         fetch(this.props.url)
             .then(data => data.json())
             .then(data => {
-                this.setState({ loaded: true })
-                console.log('Data is', this.props.url)
+                // this.setState({ data })
                 this.props.onDataLoaded(data)
-
             }).catch(error => {
                 this.setState({ error })
             })
     }
     render() {
-        const { error, loaded } = this.state
-        const { children } = this.props
+        const { error } = this.state
         if (error) {
             throw error
         }
-        return (loaded ? children ? children : null : null)
+        return null
     }
 }

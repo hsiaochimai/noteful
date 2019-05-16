@@ -174,19 +174,7 @@ class App extends Component {
           />
           <Route
             path="/note/:noteID"
-            render={routerProps => {
-              // console.log(match, location, history)  
-              // debugger
-
-              return (
-                <DataLoader
-                  url={'http://localhost:9090/notes'}
-                  onDataLoaded={this.setNotes}
-                >
-                  <NotePage {...routerProps} />
-                </DataLoader>)
-            }
-            }
+            component={NotePage}
           />
 
           <Route
