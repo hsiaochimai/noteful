@@ -61,15 +61,8 @@ header a:hover {
 .addFolderButton:hover {
   background-color: #000000;
 }
-<<<<<<< HEAD
-.folderDetails{
-  display:flex;
-}
-.noteDetails a{
-=======
 
 .noteDetails a {
->>>>>>> 6fbc2d9a939084a64f5b7e727e609e89a2a282a3
   text-decoration: none;
   color: #000000;
   font-size: 20px;
@@ -78,16 +71,8 @@ header a:hover {
 .noteDetails a:hover {
   color: #F7FFF7;
 }
-<<<<<<< HEAD
-.noteButtons{
-  display:flex;
-  padding: 10px;
-}
-.noteDeleteButton{
-=======
 
 .noteDeleteButton {
->>>>>>> 6fbc2d9a939084a64f5b7e727e609e89a2a282a3
   font-size: 18px;
   background-color: #084C61;
   border: none;
