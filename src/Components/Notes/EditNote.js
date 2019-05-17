@@ -200,7 +200,7 @@ export default class EditNoteForm extends Component {
             >
               Cancel
             </button>
-            <button className="save" 
+            <button className="saveButton" 
             type="submit"
             disabled={!this.state.formValid}>
               Save

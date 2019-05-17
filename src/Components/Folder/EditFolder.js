@@ -131,7 +131,7 @@ handleClickCancel = () => {
                 <input type='text' id='name' name='folderName' value={folder_name}onChange={e => this.folderChanged(e.target.value)} />
                 <ValidationError hasError={!this.state.folderValid} message={this.state.validationMessages.name} />
             </div>
-            <div className='editFolderbuttons'>
+            <div className='EditFolderButtons'>
             <button
               className="cancel"
               type="button"

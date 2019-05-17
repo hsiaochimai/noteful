@@ -61,6 +61,22 @@ header a:hover {
 .addFolderButton:hover {
   background-color: #000000;
 }
+.folderDetails{
+  display:flex;
+  flex-direction: column;
+}
+.folderButtons button{
+  font-size: 18px;
+  background-color: #084C61;
+  border: none;
+  color: #F7FFF7;
+}
+.folderButtons{
+  display:flex;
+}
+.editFolderButton{
+ margin-right: 5px;
+}
 
 .noteDetails a {
   text-decoration: none;
@@ -71,7 +87,12 @@ header a:hover {
 .noteDetails a:hover {
   color: #F7FFF7;
 }
-
+.editNoteButton{
+  font-size: 18px;
+  background-color: #084C61;
+  border: none;
+  color: #F7FFF7;
+}
 .noteDeleteButton {
   font-size: 18px;
   background-color: #084C61;
@@ -147,7 +168,72 @@ header a:hover {
 .AddNoteForm textarea[type='text'] {
   font-size: 20px;
 }
+.EditNoteForm{
+  display: flex;
+  flex-direction: column;
+}
+.EditNoteForm h3 {
+  font-size: 20px;
+}
 
+.EditNoteForm label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.EditNoteForm input {
+  margin-bottom: 20px;
+  min-width: 30%;
+}
+
+.EditNoteForm input[type='text'] {
+  font-size: 24px;
+}
+
+.EditNoteForm textarea {
+  min-width: 30%;
+}
+
+.EditNoteForm textarea[type='text'] {
+  font-size: 20px;
+}
+.EditNoteButtons button{
+  margin-top: 20px;
+  background-color: #571F4E;
+  border: none;
+  color: #F7FFF7;
+  font-size: 18px;
+  margin-left: 20px;
+}
+.saveButton .disabled{
+  opacity: 0.65; 
+  cursor: not-allowed;
+}
+.EditFolderForm h3 {
+  font-size: 20px;
+}
+
+.EditFolderForm label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.EditFolderForm input {
+  margin-bottom: 20px;
+  min-width: 30%;
+}
+
+.EditFolderForm input[type='text'] {
+  font-size: 24px;
+}
+.EditFolderButtons button{
+  margin-top: 20px;
+  background-color: #571F4E;
+  border: none;
+  color: #F7FFF7;
+  font-size: 18px;
+  margin-left: 20px;
+}
 .folder-select {
   background-color: #571F4E;
   border: none;

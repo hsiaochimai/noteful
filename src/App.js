@@ -127,7 +127,6 @@ class App extends Component {
       updateNote: this.updateNote,
       updateFolder: this.updateFolder,
       deleteFolder: this.deleteFolder,
-      foldersLoaded: this.deleteFolder,
       notesLoaded: this.state.notesLoaded,
       foldersLoaded: this.state.foldersLoaded,
     }

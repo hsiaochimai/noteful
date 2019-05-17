@@ -39,7 +39,7 @@ class Folder extends Component {
           </h2>
           <div className="folderButtons">
             <Link to={`/edit/folder/${folder.id}`}>
-              <button className="editNoteButton">Edit Folder</button>
+              <button className="editFolderButton">Edit Folder</button>
             </Link>
             <button className='folderDeleteButton'onClick={() => {
             console.log(`this was clicked`, folder.id)
