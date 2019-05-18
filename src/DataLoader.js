@@ -1,6 +1,6 @@
 import { Component } from "react";
-import PropTypes from 'prop-types'
-
+import PropTypes from 'prop-types';
+import config from './config';
 
 export default class DataLoader extends Component {
     static propTypes = {
@@ -19,8 +19,14 @@ export default class DataLoader extends Component {
         if (this.props.onBeforeFetch) {
             this.props.onBeforeFetch(this.props.url)
         }
-
-        fetch(this.props.url)
+        console.log(`API KEY is`, config)
+        fetch(this.props.url, {
+            method: "GET",
+            headers: {
+              "content-type": "application/json",
+              'Authorization': `Bearer ${config.API_KEY}`
+            }
+        })
             .then(data => data.json())
             .then(data => {
                 // this.setState({ data })
