@@ -14,6 +14,7 @@ class Folder extends Component {
     fetch(config.API_ENDPOINT_FOLDERS + folderId, {
       method: "DELETE",
       headers: {
+        'authorization': `bearer ${config.API_KEY}`,
         "content-type": "application/json"
       }
     })
@@ -43,7 +44,6 @@ class Folder extends Component {
               <button className="editFolderButton">Edit Folder</button>
             </Link>
             <button className='folderDeleteButton'onClick={() => {
-            console.log(`this was clicked`, folder.id)
             this.deleteFolderRequest(
               folder.id,
               this.context.deleteFolder)

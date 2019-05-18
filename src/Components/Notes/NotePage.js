@@ -15,12 +15,7 @@ class NotePage extends Component {
     }
     render() {
         const noteID = parseInt(this.props.match.params.noteID)
-        console.log(`this is noteID`, noteID)
-        let contextNote = this.context.notes
-        console.log(`this is context`, this.context)
         let getNote = this.context.notes.filter(note => note.id === noteID)
-        console.log(`this is getNote`, getNote)
-
         const { context } = this
         if (!getNote.length || !context.foldersLoaded || !context.notesLoaded) {
             return (<p>Loading...</p>);

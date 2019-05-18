@@ -19,7 +19,6 @@ export default class DataLoader extends Component {
         if (this.props.onBeforeFetch) {
             this.props.onBeforeFetch(this.props.url)
         }
-        console.log(`API KEY is`, config)
         fetch(this.props.url, {
             method: "GET",
             headers: {

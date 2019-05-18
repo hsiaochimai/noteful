@@ -43,7 +43,6 @@ class AddNoteForm extends Component {
     );
   }
   folderIdChanged(folderId) {
-    console.log(`folderId is`,folderId);
     this.setState(
       {
         folderId
@@ -124,7 +123,6 @@ class AddNoteForm extends Component {
   }
   handleNoteSubmit(e) {
     e.preventDefault();
-    console.log(`this clicked`);
     const newNote = {
       content: this.state.content,
       folder_id: this.state.folderId,
@@ -132,15 +130,12 @@ class AddNoteForm extends Component {
       modified: new Date().toISOString()
     };
     
-    console.log(
-      `this is what the JSON springify does`,
-      JSON.stringify(newNote)
-    );
     const url = config.API_ENDPOINT_NOTES;
     const options = {
       method: "POST",
       body: JSON.stringify(newNote),
       headers: {
+        'authorization': `bearer ${config.API_KEY}`,
         "Content-Type": "application/json"
       }
     };

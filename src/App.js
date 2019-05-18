@@ -48,7 +48,6 @@ class App extends Component {
   }
 
   deleteNote = NoteId => {
-    console.log(`this is what delete note does`, NoteId)
     const newNotes = this.state.notes.filter(note =>
       note.id !== NoteId
     )
@@ -60,7 +59,6 @@ class App extends Component {
 
   }
   deleteFolder = FolderId => {
-    console.log(`this is what delete note does`, FolderId)
     const newFolders = this.state.folders.filter(folder =>
       folder.id !== FolderId
     )

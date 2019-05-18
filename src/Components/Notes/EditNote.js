@@ -24,6 +24,7 @@ export default class EditNoteForm extends Component {
     fetch(config.API_ENDPOINT_NOTES+  noteId, {
       method: "GET",
       headers: {
+        'authorization': `bearer ${config.API_KEY}`,
         "Content-Type": "application/json"
       }
     })
@@ -125,11 +126,11 @@ export default class EditNoteForm extends Component {
     const noteId = this.props.match.params.noteid;
     const { id, note_name, content, modified, folder_id } = this.state;
     const newNote = { id, note_name, content, modified, folder_id };
-    console.log(noteId);
     fetch(config.API_ENDPOINT_NOTES+  noteId, {
       method: "PATCH",
       body: JSON.stringify(newNote),
       headers: {
+        'authorization': `bearer ${config.API_KEY}`,
         "content-type": "application/json"
       }
     })
@@ -158,7 +159,6 @@ export default class EditNoteForm extends Component {
   };
   render() {
     const { note_name, content } = this.state;
-    console.log(`edit form rendered`);
     return (
       <section className="EditNoteForm">
         <h2>Edit Note</h2>

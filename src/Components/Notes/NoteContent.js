@@ -6,7 +6,6 @@ class NoteContent extends Component{
     notes: PropTypes.array.isRequired,
   }
     render(){
-        console.log(`this is in the note content`,this.props.notes)
         let noteContent=this.props.notes.map(note=>{
             return(
                 <p key={note.id}>

@@ -24,6 +24,7 @@ export default class EditFolderForm extends Component {
         fetch(config.API_ENDPOINT_FOLDERS + folderId, {
           method: "GET",
           headers: {
+            'authorization': `bearer ${config.API_KEY}`,
             "Content-Type": "application/json"
           }
         })
@@ -37,8 +38,6 @@ export default class EditFolderForm extends Component {
             return res.json();
           })
           .then(resJson => {
-            console.log(resJson);
-    
             this.setState({
               id: resJson.id,
               folder_name: resJson.folder_name,
@@ -92,11 +91,11 @@ handleClickCancel = () => {
     const folderId = this.props.match.params.folderID;
     const { id, folder_name } = this.state;
     const newFolder = { id, folder_name };
-    console.log(folderId);
     fetch(config.API_ENDPOINT_FOLDERS + folderId, {
       method: "PATCH",
       body: JSON.stringify(newFolder),
       headers: {
+        'authorization': `bearer ${config.API_KEY}`,
         "content-type": "application/json"
       }
     })

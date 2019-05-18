@@ -31,7 +31,8 @@ export default class AddFolder extends Component {
             method: 'POST',
             body: JSON.stringify(newFolder),
             headers: {
-                "Content-Type": "application/json",
+                'authorization': `bearer ${config.API_KEY}`,
+                "Content-Type": "application/json"
             }
         };
         fetch(url, options)
@@ -42,7 +43,6 @@ export default class AddFolder extends Component {
                 return res.json();
             })
             .then(data => {
-                console.log(data)
                 this.setState({
                     error: null,
                     id: "",

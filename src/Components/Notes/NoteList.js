@@ -9,6 +9,7 @@ function deleteNoteRequest(noteId, cb) {
   fetch(config.API_ENDPOINT_NOTES+  noteId, {
     method: 'DELETE',
     headers: {
+      'authorization': `bearer ${config.API_KEY}`,
       'content-type': 'application/json',
     }
   })
@@ -33,7 +34,6 @@ notes: PropTypes.array.isRequired,
 }
   static contextType = NotefulContext
   render() {
-    console.log(`these were the props sent to notelist`, this.props)
     const { notes } = this.props
     notes.sort((a, b) => a.modified - b.modified)
     let notesHTML = this.props.notes.map((note, i) => {
@@ -45,7 +45,6 @@ notes: PropTypes.array.isRequired,
           </Link>
           <div className='noteButtons'>
           <button className='noteDeleteButton'onClick={() => {
-            console.log(`this was clicked`, note.id)
             deleteNoteRequest(
               note.id,
               this.context.deleteNote)
