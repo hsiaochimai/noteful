@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NotefulContext from "../../NotefulContext";
 import ValidationError from "../ValidationErrors/ValidationError";
+import config from '../../config';
 export default class EditNoteForm extends Component {
   static contextType = NotefulContext;
   state = {
@@ -20,7 +21,7 @@ export default class EditNoteForm extends Component {
   };
   componentDidMount() {
     const noteId = parseInt(this.props.match.params.noteid);
-    fetch(`http://localhost:8000/api/notes/${noteId}`, {
+    fetch(config.API_ENDPOINT_NOTES+  noteId, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -125,7 +126,7 @@ export default class EditNoteForm extends Component {
     const { id, note_name, content, modified, folder_id } = this.state;
     const newNote = { id, note_name, content, modified, folder_id };
     console.log(noteId);
-    fetch(`http://localhost:8000/api/notes/${noteId}`, {
+    fetch(config.API_ENDPOINT_NOTES+  noteId, {
       method: "PATCH",
       body: JSON.stringify(newNote),
       headers: {

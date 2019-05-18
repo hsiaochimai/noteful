@@ -2,7 +2,8 @@ import React, { Component } from "react";
 // import { BrowserRouter, Route, Link } from "react-router-dom"
 import '../../App.css';
 import NotefulContext from '../../NotefulContext';
-import ValidationError from '../ValidationErrors/ValidationError'
+import ValidationError from '../ValidationErrors/ValidationError';
+import config from '../../config';
 export default class EditFolderForm extends Component {
     
     static contextType = NotefulContext
@@ -20,7 +21,7 @@ export default class EditFolderForm extends Component {
     }
     componentDidMount() {
         const folderId = parseInt(this.props.match.params.folderID);
-        fetch(`http://localhost:8000/api/folders/${folderId}`, {
+        fetch(config.API_ENDPOINT_FOLDERS + folderId, {
           method: "GET",
           headers: {
             "Content-Type": "application/json"
@@ -92,7 +93,7 @@ handleClickCancel = () => {
     const { id, folder_name } = this.state;
     const newFolder = { id, folder_name };
     console.log(folderId);
-    fetch(`http://localhost:8000/api/folders/${folderId}`, {
+    fetch(config.API_ENDPOINT_FOLDERS + folderId, {
       method: "PATCH",
       body: JSON.stringify(newFolder),
       headers: {

@@ -2,7 +2,8 @@ import React, { Component } from "react";
 // import { BrowserRouter, Route, Link } from "react-router-dom"
 import '../../App.css';
 import NotefulContext from '../../NotefulContext';
-import ValidationError from '../ValidationErrors/ValidationError'
+import ValidationError from '../ValidationErrors/ValidationError';
+import config from '../../config';
 
 export default class AddFolder extends Component {
     static contextType = NotefulContext
@@ -25,7 +26,7 @@ export default class AddFolder extends Component {
     handleFolderSubmit(e) {
         e.preventDefault();
         const newFolder = {folder_name: this.state.name}
-        const url = 'http://localhost:8000/api/folders';
+        const url = config.API_ENDPOINT_FOLDERS;
         const options = {
             method: 'POST',
             body: JSON.stringify(newFolder),

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../../App.css";
+import config from '../../config';
 import NotefulContext from "../../NotefulContext";
 import PropTypes from "prop-types";
 class Folder extends Component {
@@ -10,7 +11,7 @@ class Folder extends Component {
   static contextType = NotefulContext;
 
   deleteFolderRequest(folderId, cb) {
-    fetch(`http://localhost:8000/api/folders/${folderId}`, {
+    fetch(config.API_ENDPOINT_FOLDERS + folderId, {
       method: "DELETE",
       headers: {
         "content-type": "application/json"

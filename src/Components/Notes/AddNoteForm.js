@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../../App.css";
 import NotefulContext from "../../NotefulContext";
 import ValidationError from "../ValidationErrors/ValidationError";
+import config from '../../config';
 class AddNoteForm extends Component {
   static contextType = NotefulContext;
   constructor(props) {
@@ -135,7 +136,7 @@ class AddNoteForm extends Component {
       `this is what the JSON springify does`,
       JSON.stringify(newNote)
     );
-    const url = "http://localhost:8000/api/notes";
+    const url = config.API_ENDPOINT_NOTES;
     const options = {
       method: "POST",
       body: JSON.stringify(newNote),

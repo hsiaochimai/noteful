@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Route, withRouter } from "react-router-dom";
 import "./App.css";
 import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary';
+import config from "./config";
 import AddFolderPage from './Components/Folder/AddFolderPage';
 import FolderPage from './Components/Folder/FolderPage';
 import AddNotePage from './Components/Notes/AddNotePage';
@@ -138,13 +139,13 @@ class App extends Component {
         <Header />
         <ErrorBoundary>
           <DataLoader
-            url={'http://localhost:8000/api/folders'}
+            url={config.API_ENDPOINT_FOLDERS}
             onBeforeFetch={() => this.setState({ foldersLoaded: false })}
             onDataLoaded={this.setFolders}
           />
           <DataLoader
             onBeforeFetch={() => this.setState({ notesLoaded: false })}
-            url={'http://localhost:8000/api/notes'}
+            url={config.API_ENDPOINT_NOTES}
             onDataLoaded={this.setNotes}
           />
         </ErrorBoundary>
